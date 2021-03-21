@@ -1,0 +1,8 @@
+data/ProcessAnalysis.ows
+data/bow_model.csv
+.idea/
+__pycache__/
+data/bag_of_works.pkl
+data/pr1.pdf
+data/reviews.pdf
+
