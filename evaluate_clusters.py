@@ -4,10 +4,15 @@ Code for Clusters evaluation metrics
 @authors Sabo et. al
 """
 import glob
+import json
 import logging
 import random
 import re
+import time
 from math import isnan
+import coloredlogs
+
+coloredlogs.install()
 
 import numpy as np
 import pandas as pd
@@ -142,7 +147,6 @@ def hopkins(data_array):
 
     mins_array, maxs_array = calculate_mins_max(data_array.values)
 
-
     random_arrays = generate_random(m_samples, d_cols, mins_array, maxs_array)
 
     ujd = []
@@ -222,3 +226,128 @@ def generate_random(n_samples, dim, mins_array, maxs_array):
         list_random_arrays.append(np.array(random_array))
 
     return list_random_arrays
+
+
+def process_notes_from_expert():
+    logging.info("-" * 50)
+    logging.info("Process notes from Legal Expert")
+
+    # Open and read expert analysis from raw text file.
+    with open("data/clustering_evaluation/analise_clustering.txt", encoding="utf-8", mode="r") as fp:
+        logging.info("Reading notes from expert")
+        raw_text = fp.read()
+
+    logging.info("Lines: " + str(len(raw_text)))
+
+    clustering_algs = [
+        "K-means",
+        "Hierárquica"
+    ]
+
+    alg_dicts = dict()
+
+    for alg in clustering_algs:
+        raw_text = raw_text.replace(alg, "#" + alg)
+
+    results_by_alg = raw_text.split("#")
+
+    # Iterate over results from algorithms (First item is the header of the file)
+    for ind_alg in range(len(results_by_alg[1:])):
+
+        alg_result = results_by_alg[1:][ind_alg]
+
+        if len(alg_result.strip()) < 5:
+            continue
+
+        list_results = list()
+        # Split the data in lines
+        lines = alg_result.split("\n")
+        logging.info("-" * 10)
+        logging.info(lines[0])
+
+        # Process the data by lines
+        cluster_log_started = False
+        cluster_data = dict()
+        for line in lines:
+
+            tokens = line.split()
+            line = " ".join(tokens)  # Merge the tokens using only spaces, removing chars like '\n' and '\t'
+
+            if len(tokens) <= 1:
+                continue
+
+            regexp = re.compile(r'C[0-9]+')
+
+            # Check if start from Cluster results
+            if regexp.search(line):
+
+                if len(cluster_data.keys()) > 0:
+                    list_results.append(cluster_data)
+
+                cluster_data = dict()
+
+                logging.warning(line)
+
+                regexp = re.findall(r'([0-9]+)', line)
+
+                cluster_id = "C" + regexp[0]
+                docs_cluster = int(regexp[1])
+
+                logging.warning("Num docs in Cluster: ")
+                logging.warning(cluster_id)
+                logging.warning(docs_cluster)
+
+                cluster_data["num_docs"] = int(docs_cluster)
+                cluster_data["id"] = cluster_id
+                cluster_data["topics"] = list()
+
+            # Else if it's the data for the cluster.
+            else:
+                if line[0:10].find("*") >= 0:
+                    continue
+
+                line = line.replace("–", "-")
+                line = line.replace("check-in", "check_in")
+
+                splits = line.split(" - ")
+
+                if len(splits) > 1:
+                    topic_data = dict()
+
+                    topic_description = splits[0].strip()
+                    string_docs = splits[1].replace(" e ", ",").split(",")
+
+                    docs = sorted([doc.strip() for doc in string_docs])
+
+                    logging.info(topic_description)
+
+                    topic_data["topico"] = topic_description
+                    if docs[0] == "Nenhum":
+                        topic_data["docs"] = []
+                    else:
+                        topic_data["docs"] = docs
+
+                    num_docs_topic = len(topic_data["docs"])
+                    topic_data["num_docs"] = num_docs_topic
+                    cluster_data["topics"].append(topic_data)
+
+                    if ind_alg == 1:  # Hierarchical
+                        topic_data = dict()
+                        topic_data["topico"] = "Padrão"
+                        topic_data["docs"] = []
+                        topic_data["num_docs"] = cluster_data["num_docs"] -num_docs_topic
+                        cluster_data["topics"].append(topic_data)
+
+
+                    logging.info(docs)
+                else:
+                    logging.error("Else: " + str(line))
+
+
+
+            # time.sleep(0.1)
+
+        alg_dicts[clustering_algs[ind_alg]] = list_results
+    with open("data/clustering_evaluation/results.json", "w+") as fp:
+        json.dump(alg_dicts, indent=4, fp=fp, ensure_ascii=False)
+

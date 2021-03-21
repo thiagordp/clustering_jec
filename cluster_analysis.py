@@ -13,14 +13,15 @@ import nltk
 from sklearn.metrics.pairwise import cosine_similarity
 
 from affinity_propagation_clustering import affinity_clustering
-from evaluate_clusters import load_process_files, save_bow_to_csv, calculate_cluster_tendency
+from evaluate_clusters import load_process_files, save_bow_to_csv, calculate_cluster_tendency, calculate_entropy, calculate_impurity, \
+    process_notes_from_expert
 
 DATASET_PATH = "/media/trdp/Arquivos/Studies/Msc/Thesis/Experiments/Datasets/jec_base_665/TXTs/"
 # DATASET_PATH = "/media/trdp/Arquivos/Studies/Msc/Thesis/Experiments/Datasets/processos_transp_aereo/txts_atualizados_sd_manual/novos/"
 REPLACE_CHARS = "°-.:/,;()[]{}º\xa0§“”'‘’ª&$#\"@!?+-~£\x81<>"
 
 
-def interpret_groups(file_name, output_path):
+def interpret_groups_pkl(file_name, output_path):
     data = ""
     with open(file_name) as fp:
         data = fp.read()
@@ -76,7 +77,7 @@ def calculate_sequences():
             index += 1
 
 
-def token_count():
+def quantitave_analysis_dataset():
     docs = glob.glob(DATASET_PATH + "*")
 
     total_tokens = 0
@@ -106,37 +107,55 @@ def token_count():
                 vocab[token] += 1
 
     logging.info("Total Tokens:" + str(total_tokens))
-    print("Total Docs:  ", len_docs)
-    print("Tokens/Doc:  ", round(total_tokens / len_docs, 0))
-    print("Tokens/doc 2:", int(round(np.mean(tokens_doc), 0)))
-    print("STD 2:       ", int(round(np.std(tokens_doc), 0)))
-    print("Vocab size:  ", len(vocab.keys()))
-    # print("Vocab:", vocab)
+    logging.info("Total Docs:  " + str(len_docs))
+    logging.info("Tokens/Doc:  " + str(round(total_tokens / len_docs, 0)))
+    logging.info("Tokens/doc 2:" + str(int(round(np.mean(tokens_doc), 0))))
+    logging.info("STD 2:       " + str(int(round(np.std(tokens_doc), 0))))
+    logging.info("Vocab size:  " + str(len(vocab.keys())))
+    # logging.info("Vocab:" +  str(vocab))
 
 
 def evaluate_cluster_results():
+
+    # # Load BOW
     # data, vocab = load_process_files()
+    #
+    # # Save BOW to CSV to improve processing time.
     # save_bow_to_csv(data, vocab)
+    #
+    # # Calculate Clustering tendency
+    # h = calculate_cluster_tendency()
+    # logging.info("Hopkins" + str(h))
 
-    for i in range(100):
-        h = calculate_cluster_tendency()
+    process_notes_from_expert()
 
+    # Entropy
+    calculate_entropy()
+
+    # Purity
+    calculate_impurity()
 
 def main():
-
     logging.basicConfig(format='%(asctime)s | %(levelname)s |\t%(message)s ',
                         datefmt='%d-%b-%y %H:%M:%S',
                         level=logging.INFO)
 
-    nltk.download('stopwords')
-    # interpret_groups("data/clustering_hierarchical.txt", "data/hierarchical/")
-    # interpret_groups("data/clustering_kmeans.txt", "data/k_means/")
-    # token_count()
+    # # Download NLTK's list of stopwords
+    # nltk.download('stopwords')
+    #
+    # # Process PKL outputs (Docs and assigned clusters) from Orange 3.
+    # interpret_groups_pkl("data/clustering_hierarchical.txt", "data/hierarchical/")
+    # interpret_groups_pkl("data/clustering_kmeans.txt", "data/k_means/")
+    #
+    # # Get the quantitative information about the documents
+    # quantitave_analysis_dataset()
     # calculate_sequences()
-    # evaluate_cluster_results()
+    evaluate_cluster_results()
 
-    _, docs, _, bow_docs, vocab = load_process_files()
-    affinity_clustering(docs, bow_docs, vocab)
+    # Affinity Clustering
+    # _, docs, _, bow_docs, vocab = load_process_files()
+    # affinity_clustering(docs, bow_docs, vocab)
+
 
 
 if __name__ == "__main__":
