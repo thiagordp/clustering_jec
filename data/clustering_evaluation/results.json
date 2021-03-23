@@ -188,7 +188,6 @@
                         "50",
                         "58",
                         "665",
-                        "255",
                         "346",
                         "14",
                         "141",
@@ -204,7 +203,7 @@
                         "395",
                         "398"
                     ],
-                    "num_docs": 34
+                    "num_docs": 33
                 },
                 {
                     "topico": "Cobrança indevida de multa / Cobrança indevida de excesso de peso em bagagem / Casos julgados procedentes ou parcialmente procedentes",
@@ -287,7 +286,7 @@
             "id": "C2",
             "topics": [
                 {
-                    "topico": "Extravio temporário de bagagem / extravio definitivo de bagagem / Bagagem danificada ou violada",
+                    "topico": "Extravio temporário de bagagem / extravio definitivo de bagagem / Bagagem danificada ou violada / Voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes",
                     "docs": [
                         "1",
                         "144",
@@ -314,7 +313,7 @@
                     "num_docs": 21
                 },
                 {
-                    "topico": "Atraso de voo / cancelamento de voo / antecipação de voo",
+                    "topico": "Atraso de voo / cancelamento de voo / antecipação de voo / Voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes",
                     "docs": [
                         "104",
                         "113",
@@ -349,9 +348,10 @@
                         "80",
                         "92",
                         "93",
-                        "99"
+                        "99",
+                        "21"
                     ],
-                    "num_docs": 34
+                    "num_docs": 35
                 },
                 {
                     "topico": "Diferentes",
@@ -419,7 +419,6 @@
                         "416",
                         "418",
                         "419",
-                        "421",
                         "422",
                         "423",
                         "424",
@@ -508,7 +507,7 @@
                         "589",
                         "551"
                     ],
-                    "num_docs": 133
+                    "num_docs": 132
                 },
                 {
                     "topico": "Extravio temporário de bagagem / extravio definitivo de bagagem / Bagagem danificada ou violada / Casos julgados procedentes ou parcialmente procedentes",
@@ -534,7 +533,6 @@
                         "421",
                         "442",
                         "448",
-                        "456",
                         "504",
                         "604",
                         "383",
@@ -578,7 +576,7 @@
                         "491",
                         "557"
                     ],
-                    "num_docs": 64
+                    "num_docs": 63
                 },
                 {
                     "topico": "Cancelamento da passagem pelo consumidor / Problemas com reembolso / Multa abusiva / Casos julgados procedentes ou parcialmente procedentes",
@@ -733,7 +731,7 @@
             "id": "C6",
             "topics": [
                 {
-                    "topico": "Extravio temporário de bagagem / Extravio definitivo de bagagem",
+                    "topico": "Extravio temporário de bagagem / Extravio definitivo de bagagem / Voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes",
                     "docs": [
                         "258",
                         "265",
@@ -754,7 +752,7 @@
                     "num_docs": 15
                 },
                 {
-                    "topico": "Atraso, cancelamento, antecipação de voo",
+                    "topico": "Atraso, cancelamento, antecipação de voo / Voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes",
                     "docs": [
                         "229",
                         "287",

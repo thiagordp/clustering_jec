@@ -6,6 +6,7 @@ Code for Clusters evaluation metrics
 import glob
 import json
 import logging
+import math
 import random
 import re
 import time
@@ -90,12 +91,70 @@ def process_text(text):
     return " ".join(tokens)
 
 
-def calculate_entropy(clusters_docs_dict):
+def calculate_entropy(clustering_alg, clusters_docs_dict):
+    """
+    Calculate Entropy from JSON files with expert notes
 
-    pass
+    Ref:
+    :param clustering_alg: Clustering Algorithm
+    :param clusters_docs_dict: Dict from JSON with all results
+    :return: Entropy Values
+    """
+
+    logging.info("#" * 50)
+    logging.info("Alg " + clustering_alg)
+
+    clusters_dict_list = clusters_docs_dict[clustering_alg]
+    list_docs = []
+
+    n_docs = 0
+
+    h_omega = 0
+    h_w_list = []
+    n_w_list = []
+
+    for cluster_dict in clusters_dict_list:
+        logging.info("-" * 50)
+        logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
+        topics_list = cluster_dict["topics"]
+
+        h_w = 0.0
+
+        # Get total of docs in cluster
+        n_w = np.sum([topic_dict["num_docs"] for topic_dict in topics_list])
+
+        # TODO: Check the number of documents and compare to the "cluster" number
+        n_docs += n_w
+
+        if cluster_dict["id"] == "C4":
+            pass
+
+        for topic_dict in topics_list:
+            if n_w > 0:
+                p_wc = (1.0 * topic_dict["num_docs"]) / n_w
+
+                if p_wc > 0:
+                    h_w += -1.0 * p_wc * math.log2(p_wc)
+
+        h_w_list.append(h_w)
+        n_w_list.append(n_w)
+
+        logging.info(round(h_w, 4))
+
+    h_big_omega = 0
+    logging.info("Nw " + str(n_w_list))
+    logging.info("hw " + str(h_w_list))
+    n_docs = np.sum(n_w_list)
+
+    for i in range(len(h_w_list)):
+        h_big_omega += h_w_list[i] * (n_w_list[i] / n_docs)
+
+    logging.info("H(Ω)= " + str(round(h_big_omega, 4)))
+
+    return 0
 
 
-def calculate_impurity(clusters_docs_dict):
+def calculate_impurity(clustering_alg, clusters_docs_dict):
     pass
 
 
@@ -336,7 +395,7 @@ def process_notes_from_expert():
                         topic_data = dict()
                         topic_data["topico"] = "Padrão"
                         topic_data["docs"] = []
-                        topic_data["num_docs"] = cluster_data["num_docs"] -num_docs_topic
+                        topic_data["num_docs"] = cluster_data["num_docs"] - num_docs_topic
                         cluster_data["topics"].append(topic_data)
 
                     logging.info(docs)
@@ -351,4 +410,3 @@ def process_notes_from_expert():
         json.dump(alg_dicts, indent=4, fp=fp, ensure_ascii=False)
 
     return alg_dicts
-
