@@ -1,0 +1,211 @@
+﻿-> PRONTOS (n. de docs)
+        
+
+
+K-means
+
+
+C1. Sem tópico principal (243)
+Atraso de voo / cancelamento de voo / antecipação de voo / Overbooking / No show / Casos julgados procedentes ou parcialmente procedentes - 107, 131, 312, 333, 371, 374, 393, 369, 316, 330, 68, 69, 294, 106, 148, 149, 429, 128, 134, 152, 153, 204, 295, 365, 398, 428, 554, 597, 598, 142, 147, 158, 208, 209, 246, 262, 266, 278, 279, 299, 67, 123, 124, 155, 169, 195, 202, 22, 225, 261, 263, 268, 27, 3, 326, 331, 34,35, 351, 354, 359, 363, 364, 368, 370, 382, 387, 52, 53, 56, 647, 655, 659, 660, 667, 669, 670, 8, 54, 65, 325, 11, 118, 12, 121, 137, 139, 15, 16, 188, 19, 207, 222, 23, 231, 233, 25, 26, 28, 29, 30, 33, 36, 42, 43, 48, 57, 646, 649, 656, 657, 668, 70, 71, 72, 73, 90, 91, 218, 119, 122, 138, 145, 167, 168, 17, 192, 212, 219, 244, 249, 255, 267, 277, 280, 31, 322, 342, 352, 353, 38, 388, 391, 46, 658, 9, 185, 78, 232, 97, 203, 652, 103, 213, 136, 79
+Extravio temporário de bagagem / extravio definitivo de bagagem / Bagagem danificada ou violada / Casos julgados procedentes ou parcialmente procedentes - 313, 347, 348, 349, 356, 372, 394, 198, 200, 216, 223, 235, 256, 300, 44, 47, 50, 58, 665, 255, 346, 14, 141, 343, 358, 133, 166, 310, 376, 59, 61, 650, 395, 398
+Cobrança indevida de multa / Cobrança indevida de excesso de peso em bagagem / Casos julgados procedentes ou parcialmente procedentes - 344, 377, 226, 234, 302, 324, 82, 87, 228, 339, 396, 399, 84, 178, 332, 360, 88
+Atraso de voo inferior a 4h / Casos julgados improcedentes - 224, 227, 252, 271, 282, 651, 66, 83, 95, 196,
+Diferentes - 375, 114, 272, 288, 289, 63, 251, 666, 671, 81, 367, 112, 242, 245, 247, 304, 311, 328, 340, 361, 664, 7, 96, 197, 2, 150, 172, 18, 96
+
+
+* Há casos que pertencem tanto ao assunto “extravio” como “atraso/cancelamento de voo”, então repeti esses documentos.
+
+
+C2. Voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes (60)
+        Sub assuntos:
+Extravio temporário de bagagem / extravio definitivo de bagagem / Bagagem danificada ou violada - 1, 144, 146, 21, 214, 221, 37, 49, 5, 55, 6, 653, 654, 98, 45, 156, 205, 220, 51, 648, 85
+Atraso de voo / cancelamento de voo / antecipação de voo - 104, 113, 125, 13, 140, 151, 163, 164, 210, 211, 215, 217, 236, 237, 24, 32, 39, 4, 40, 41, 60, 62, 64, 648, 661, 662, 663, 74, 75, 77, 80, 92, 93, 99 
+Diferentes - 10, 199, 127, 129, 183, 309
+
+
+* Há casos que pertencem tanto ao assunto “extravio” como “atraso/cancelamento de voo”, então repeti esses documentos.
+
+
+C3. Sem tópico principal (275)
+Atraso de voo / cancelamento de voo / antecipação de voo / Overbooking / No show / Casos julgados procedentes ou parcialmente procedentes - 605, 607, 610, 611, 612, 613, 615, 620, 631, 632, 633, 634, 636, 641, 642, 602, 608, 619,  548, 549, 588, 592, 593, 594, 303, 385, 400, 444, 481, 484, 511, 567, 577, 378, 379, 380, 381, 392, 404, 409, 411, 414, 416, 418, 419, 421, 422, 423, 424, 433, 439, 440, 442, 443, 447, 448, 450, 451, 452, 453, 454, 456, 457, 458, 465, 467, 468, 472, 487, 500, 510, 526, 540, 543, 544, 545, 420, 430, 432, 417, 426, 431, 441, 474, 496, 501, 504, 505, 506, 552, 555, 558, 560, 579, 582, 583, 595, 616, 623, 624, 625, 626, 627, 629, 630, 405, 473, 485, 490, 495, 502, 507, 514, 515, 516, 523, 527, 533, 532, 537, 547, 553, 563, 586, 350, 412, 493, 539, 556, 562, 582, 589, 551
+Extravio temporário de bagagem / extravio definitivo de bagagem / Bagagem danificada ou violada / Casos julgados procedentes ou parcialmente procedentes - 600, 606, 609, 614, 617, 639, 643, 644, 541, 542, 570, 580, 584, 591, 596, 599, 402, 403, 421, 442, 448, 456, 504, 604, 383, 425, 437, 438, 449, 459, 460, 463, 464, 469, 497, 498, 522, 524, 525, 531, 534, 538, 550, 561, 564, 565, 566, 568, 569, 571, 572, 574, 575, 576, 578, 581, 635, 384, 407, 445, 477, 483, 491, 557
+Cancelamento da passagem pelo consumidor / Problemas com reembolso / Multa abusiva / Casos julgados procedentes ou parcialmente procedentes - 521, 573, 585, 410, 494, 621, 476, 509, 517, 519, 520, 528, 535, 536, 587
+Problemas com emissão da passagem / Reserva não realizada por erro da companhia aérea - 601, 622, 628, 640, 390, 434, 435, 455, 462, 466, 603, 618, 408, 415, 546, 672
+Oferta de passagem promocional não cumprida (Cybermonday) / Casos julgados procedentes ou parcialmente procedentes - 446, 478, 479, 480, 492, 499
+Atraso de voo por más condições meteorológicas / fechamento de aeroportos / Casos julgados improcedentes - 111, 206, 641, 471, 623, 389, 559
+Comparecimento tardio do passageiro ao check-in / Casos julgados improcedentes - 291, 314, 345, 355, 386, 401, 470
+Diferentes - 165, 406, 461, 436, 184, 503, 110, 357, 296, 397, 201, 529, 436, 482, 637, 638, 513, 413, 486, 508, 518, 512, 530, 489, 491
+
+
+C4. Cancelamento ou atraso de voo / Sentenças elaboradas pelos juízes substitutos “x” e “y” / Casos julgados procedentes ou parcialmente procedentes (12)
+        Diferentes - Nenhum
+
+
+C5. Cancelamento ou atraso de voo / voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes (31)
+        Diferentes  - 100, 115, 154, 161, 427, 625,  177, 180, 181, 86, 241
+
+
+C6. Voo internacional / Casos submetidos à Convenção de Montreal / Casos julgados procedentes ou parcialmente procedentes (44)
+        Sub assuntos:
+        Extravio temporário de bagagem / Extravio definitivo de bagagem - 258, 265, 276, 281, 283, 285, 286, 298, 305, 306, 307, 308, 317, 319, 274
+        Atraso, cancelamento, antecipação de voo - 229, 287,  230, 243, 248, 253, 254, 257, 259, 260, 269, 270, 275, 281, 284, 286, 290, 292, 293, 297, 301, 318, 319, 320, 321, 327, 334, 335, 336
+Diferentes -  264, 273, 329
+
+
+* Há casos que pertencem tanto ao assunto “extravio” como “atraso/cancelamento de voo”, então repeti esses documentos.
+
+
+
+Hierárquica
+C1. Extravio definitivo ou furto de bagagem / Casos julgados procedentes ou parcialmente procedentes (6)
+        Diferente - 581  
+C2. Extravio temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (7)
+        Diferentes – 576 
+C3. Extravio definitivo ou temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (19)
+        Diferentes - 635
+C4. No show / Casos julgados procedentes ou parcialmente procedentes (7)
+        Diferentes - Nenhum
+C5. Cancelamento da passagem pelo consumidor / Discussão sobre multa abusiva (7)
+        Diferentes – 490, 528
+C6. Direito de arrependimento / Casos julgados procedentes ou parcialmente procedentes (20) 
+        Diferentes - 389, 518, 559, 503, 384, 445, 557, 519, 582,        473, 515, 516, 553, 563, 586, 551 
+C7. Atraso ou cancelamento de voo / Casos julgados procedentes ou parcialmente procedentes (15)
+        Diferentes - 426, 474, 506, 555, 579
+C8. Consumidor impedido de embarcar / Casos julgados procedentes (4)
+        Diferentes - Nenhum
+C9. Atraso ou cancelamento de voo / Casos julgados procedentes ou parcialmente procedentes (18) 
+        Diferente - 477, 483, 476, 507, 514, 533, 488, 489, 491, 546
+C10. Oferta de passagem promocional não cumprida (Cybermonday) / Casos julgados procedentes ou parcialmente procedentes (6)
+        Diferentes - Nenhum
+C11. Atraso de voo / Aplicação da teoria da carga dinâmica da prova / Casos julgados procedentes (18)
+        Diferentes - Nenhum
+C12. Comparecimento tardio do consumidor no check-in / Condições metereológicas desfavoráveis / Casos julgados improcedentes (8) 
+        Diferentes - 390, 455, 494
+C13. Atraso de voo por problemas com a aeronave / Casos julgados procedentes ou parcialmente procedentes  (17)
+        Diferentes - 409, 461, 472, 530, 543, 544
+C14. Alteração ou cancelamento injustificado da reserva / No show / Casos julgados procedentes ou parcialmente procedentes (14)
+        Diferentes - 410, 420, 433, 448, 510
+C15. Revelia / Casos julgados procedentes ou parcialmente procedentes (5)
+        Diferentes - Nenhum
+C16. Violação de bagagem / Casos julgados parcialmente procedentes (4)
+        Diferentes - 425, 469
+C17. Extravio temporário ou definitivo de bagagem / Voo internacional / Casos julgados procedentes ou parcialmente procedentes (17)
+        Diferentes - 264, 273, 292
+C18. Atraso ou cancelamento de voo / Voo internacional / Casos julgados procedentes ou parcialmente procedentes (17)
+        Diferentes - 229, 287, 329 
+C19. Cancelamento ou Atraso de voo / voo internacional /  casos submetidos à Convenção de Montreal e Varsóvia/ Casos julgados procedentes ou parcialmente procedentes (28)
+        Diferentes - 101, 112, 115, 142, 161, 172, 177, 180, 181, 67, 97
+C20. Atraso de voo / voo internacional /  casos submetidos à Convenção de Montreal e Varsóvia/ Casos julgados procedentes ou parcialmente procedentes (35)
+        Diferentes - 10
+C21. Extravio de bagagem / Bagagem danificada / voo internacional / casos submetidos à Convenção de Montreal e Varsóvia / Casos julgados procedentes ou parcialmente procedentes (21)
+        Diferentes - 156, 199, 77, 99
+C22. Cancelamento ou atraso de voo / Sentença elaborada por juiz substituto “x” / Casos julgados procedentes ou parcialmente procedentes (5)
+        Diferente - Nenhum
+C23. Atraso de voo / Sentença elaborada por juiz substituto “x” / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferente - Nenhum
+C24. Atraso de voo / Sentença elaborada por juiz substituto “y” / Casos julgados procedentes ou parcialmente procedentes (10)
+        Diferente - Nenhum
+C25. Atraso de voo / Sentença elaborada por juiz substituto “y” / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferente - 511
+C26. Atraso de voo / Casos julgados procedentes (6)
+        Diferente - Nenhum
+C27. Extravio temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferente - Nenhum
+C28. Violação de bagagem / Itens faltantes / Casos julgados procedentes (4)
+        Diferentes - 577, 596
+C29. Passagem emitida com dados incorretos (5) 
+        Diferentes - 395, 398, 399
+C30. Litispendência e conexão de ações (existência de processo anterior semelhante) (2)
+        Diferente - Nenhum
+C31. Relação de consumo inexistente / Caso julgado improcedente (1)
+C32. Ilícito não comprovado pelo autor da ação / Casos julgados improcedentes (3)
+        Diferente - Nenhum
+C33. Atraso de voo por problemas técnicos / Ações ajuizadas por membros da mesma família / Casos julgados procedentes (2)
+        Diferente - Nenhum
+C34. Atraso de voo / Sentenças elaboradas por juiz substituto / Casos julgados procedentes (2)
+        Diferente - Nenhum
+C35. Atraso de voo / Sentenças elaboradas por juiz leigo / Casos julgados procedentes (2)
+        Diferente - Nenhum
+C36. Atraso de voo inferior a 4h / Casos julgados improcedentes (2)
+        Diferente - Nenhum 
+C37. Atraso de voo por problemas com a aeronave / Casos julgados procedentes ou parcialmente procedentes (6)
+        Diferentes - 623
+C38. Cancelamento da passagem pelo consumidor e problemas com reembolso / Sentenças elaboradas por juiz leigo / Casos julgados procedentes ou parcialmente procedentes (2)
+        Diferente - Nenhum
+C39. Cancelamento de voo / Viagem não realizada / Pedido de reembolso / Casos julgados procedentes ou parcialmente procedentes (7)
+        Diferentes - 618, 624, 627
+C40. Problemas com emissão da passagem adquirida por programa de fidelidade / Pedido de reembolso / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferentes - 604, 629
+C41. Extravio temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferente - 640
+C42. Extravio temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferente - Nenhum
+C43. Revelia / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferentes - 601
+C44. Atraso de voo por condições climáticas adversas / Sem comprovação / Casos julgados procedentes ou parcialmente procedentes (7)
+        Diferentes - 608, 610
+C45. Atraso de voo / Perda de dia de trabalho ou compromisso profissional / Casos julgados procedentes (6)
+        Diferente - 641, 642
+C46. Cancelamento de reserva por falha no sistema companhia aérea / Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferentes - 619
+C47. Atraso de voo inferior a 4h / Casos julgados improcedentes (8)
+        Diferentes - 224 
+C48. Casos julgados improcedentes / Passageiro que desobedeceu as normas de segurança (4)
+        Diferentes - 111
+C49. Atraso por condições climáticas desfavoráveis / Casos julgados improcedentes (5)
+        Diferentes - 355, 7
+C50. Comparecimento tardio do consumidor no check-in / Casos julgados improcedentes (10)
+        Diferentes - 206, 296, 357, 373, 95
+C51. Extravio definitivo de bagagem / Casos julgados procedentes ou parcialmente procedentes (4)
+Diferentes - 183
+C52. Extravio temporário / Devolução com itens faltantes / Casos julgados parcialmente procedentes (4)
+        Diferentes - 367, 376
+C53. Furto de itens da bagagem / Casos julgados procedentes ou parcialmente procedentes (7)
+        Diferentes - Nenhum
+C54. Extravio temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (6)
+        Diferentes - Nenhum
+C55. Extravio temporário de bagagem / Casos julgados procedentes ou parcialmente procedentes (9)
+        Diferentes - 14
+C56. Cancelamento da passagem pelo consumidor / Direito de arrependimento / Casos julgados improcedentes (3)
+        Diferentes - Nenhum
+C57. Cancelamento ou alteração de voo pela companhia aérea com antecedência / Casos julgados improcedentes (7)
+        Diferente - 288, 289, 294, 311
+C58. Overbooking / Casos julgados parcialmente procedentes (7)
+        Diferentes - 69, 63, 666 
+C59. Problemas com emissão de passagem adquirida por programa de fidelidade /  Casos julgados procedentes ou parcialmente procedentes (4)
+        Diferentes - 385, 81
+C60. Cobrança indevida de excesso de peso em bagagem / Casos julgados parcialmente procedentes (6)
+        Diferentes – 187 e 250
+C61. Tutela antecipada deferida (5)
+        Diferentes – 114 e 232 
+C62. Cancelamento da passagem pelo consumidor / Problemas com reembolso / Multa abusiva / Casos julgados procedentes ou parcialmente procedentes (8)
+        Diferentes - 323
+C63. Problemas com agência de viagem / pacote turístico diverso do contratado / Casos julgados parcialmente procedentes (2)
+        Diferentes - Nenhum
+C64. Cancelamento da passagem pelo consumidor / Problemas com reembolso / Discussão sobre multa abusiva / Casos julgados procedentes ou parcialmente procedentes (7) 
+        Diferentes – 316 e 341 
+C65. Atraso ou cancelamento de voo / Casos julgados procedentes ou parcialmente procedentes (8) 
+        Diferentes – 372 e 394
+C66. Extravio temporário de bagagem / Bagagem danificada / Casos julgados procedentes ou parcialmente procedentes (11) 
+        Diferentes – 374, 375, 393, 521
+C67. No show / Casos julgados procedentes ou parcialmente procedentes (5)
+        Diferentes - Nenhum
+C68. Alteração de horário e destino sem aviso prévio / Casos julgados procedentes ou parcialmente procedentes (16) 
+        Diferentes - 158, 246, 262, 279, 88
+C69. Atraso de voo por mau tempo / Sem comprovação / Casos julgados procedentes ou parcialmente procedentes (18) 
+        Diferentes - 351
+C70. Atraso de voo por mau tempo / Sem comprovação / Casos julgados procedentes ou parcialmente procedentes (24) 
+        Diferentes - 22, 34, 35, 647, 655, 659, 669, 8
+C71. Atraso de voo por problemas técnicos / Casos julgados procedentes ou parcialmente procedentes (8) 
+        Diferentes - Nenhum
+C72. Atraso / Cancelamento de voo por problemas técnicos / Casos julgados procedentes ou parcialmente procedentes (14)
+        Diferentes - Nenhum
+C73. Atraso ou cancelamento de voo por manutenção da aeronave / Casos julgados procedentes ou parcialmente procedentes (9)
+        Diferentes – 137, 218, 249, 267
+C74. Atraso ou cancelamento de voo / Sem assistência ao consumidor ou com assistência inadequada / Casos julgados procedentes ou parcialmente procedentes (20)
+        Diferentes – 231, 29, 33, 668, 70, 90
+C75. Atraso ou cancelamento de voo / Com assistência ao consumidor / Casos julgados procedentes ou parcialmente procedentes (15)
+        Diferentes – 91
+C76. Atraso ou cancelamento de voo por greve dos funcionários / Casos julgados procedentes ou parcialmente procedentes (6)
+        Diferentes – 196 e 197
+

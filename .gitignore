@@ -6,3 +6,5 @@ data/bag_of_works.pkl
 data/pr1.pdf
 data/reviews.pdf
 
+data/hierarchical/
+data/k_means/

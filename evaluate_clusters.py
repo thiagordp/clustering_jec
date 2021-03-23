@@ -90,11 +90,12 @@ def process_text(text):
     return " ".join(tokens)
 
 
-def calculate_entropy():
+def calculate_entropy(clusters_docs_dict):
+
     pass
 
 
-def calculate_impurity():
+def calculate_impurity(clusters_docs_dict):
     pass
 
 
@@ -317,7 +318,7 @@ def process_notes_from_expert():
                     topic_description = splits[0].strip()
                     string_docs = splits[1].replace(" e ", ",").split(",")
 
-                    docs = sorted([doc.strip() for doc in string_docs])
+                    docs = [doc.strip() for doc in string_docs if doc.strip() != ""]
 
                     logging.info(topic_description)
 
@@ -338,16 +339,16 @@ def process_notes_from_expert():
                         topic_data["num_docs"] = cluster_data["num_docs"] -num_docs_topic
                         cluster_data["topics"].append(topic_data)
 
-
                     logging.info(docs)
                 else:
                     logging.error("Else: " + str(line))
 
-
-
-            # time.sleep(0.1)
+        list_results.append(cluster_data)
 
         alg_dicts[clustering_algs[ind_alg]] = list_results
+
     with open("data/clustering_evaluation/results.json", "w+") as fp:
         json.dump(alg_dicts, indent=4, fp=fp, ensure_ascii=False)
+
+    return alg_dicts
 

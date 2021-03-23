@@ -116,7 +116,6 @@ def quantitave_analysis_dataset():
 
 
 def evaluate_cluster_results():
-
     # # Load BOW
     # data, vocab = load_process_files()
     #
@@ -127,13 +126,14 @@ def evaluate_cluster_results():
     # h = calculate_cluster_tendency()
     # logging.info("Hopkins" + str(h))
 
-    process_notes_from_expert()
+    clusters_docs_dict = process_notes_from_expert()
 
     # Entropy
-    calculate_entropy()
+    calculate_entropy(clusters_docs_dict)
 
     # Purity
-    calculate_impurity()
+    calculate_impurity(clusters_docs_dict)
+
 
 def main():
     logging.basicConfig(format='%(asctime)s | %(levelname)s |\t%(message)s ',
@@ -155,7 +155,6 @@ def main():
     # Affinity Clustering
     # _, docs, _, bow_docs, vocab = load_process_files()
     # affinity_clustering(docs, bow_docs, vocab)
-
 
 
 if __name__ == "__main__":
