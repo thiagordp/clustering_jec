@@ -126,8 +126,15 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
         # TODO: Check the number of documents and compare to the "cluster" number
         n_docs += n_w
 
-        if cluster_dict["id"] == "C4":
-            pass
+        num_topics = len(topics_list)
+
+        if num_topics == 1 and cluster_dict["num_docs"] > len(topics_list[0]):
+            topic_diff = cluster_dict["num_docs"] - len(topics_list[0])
+            n_w += topic_diff
+
+            # TODO: add the missing count as an adittional topic
+            p_wc = (1.0 * topic_diff) / n_w
+            h_w += -1.0 * p_wc * math.log2(p_wc)
 
         for topic_dict in topics_list:
             if n_w > 0:
