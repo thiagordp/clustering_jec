@@ -124,10 +124,10 @@ def evaluate_cluster_results():
     # save_bow_to_csv(data, vocab)
     #
     # # Calculate Clustering tendency
-    # h = calculate_cluster_tendency()
-    # logging.info("Hopkins" + str(h))
+    #h = calculate_cluster_tendency()
+    #logging.info("Hopkins" + str(h))
 
-    # clusters_docs_dict = process_notes_from_expert()
+    clusters_docs_dict = process_notes_from_expert()
 
     json_text = open("data/clustering_evaluation/results.json", "r").read()
 
@@ -136,10 +136,12 @@ def evaluate_cluster_results():
     # Entropy
     calculate_entropy("K-means", clusters_docs_dict)
     calculate_entropy("Hierárquica", clusters_docs_dict)
+    calculate_entropy("Affinity", clusters_docs_dict)
 
     # Purity
     calculate_impurity("K-means", clusters_docs_dict)
     calculate_impurity("Hierárquica", clusters_docs_dict)
+    calculate_impurity("Affinity", clusters_docs_dict)
 
 
 def main():
@@ -157,12 +159,13 @@ def main():
     # # Get the quantitative information about the documents
     # quantitave_analysis_dataset()
     # calculate_sequences()
+
     evaluate_cluster_results()
 
 
     # Affinity Clustering
-    # _, docs, _, bow_docs, vocab = load_process_files()
-    # affinity_clustering(docs, bow_docs, vocab)
+    #_, docs, _, bow_docs, vocab = load_process_files()
+    #affinity_clustering(docs, bow_docs, vocab)
 
 
 if __name__ == "__main__":

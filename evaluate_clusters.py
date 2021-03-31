@@ -9,8 +9,8 @@ import logging
 import math
 import random
 import re
-import time
 from math import isnan
+
 import coloredlogs
 
 coloredlogs.install()
@@ -21,7 +21,6 @@ import tqdm
 from nltk.corpus import stopwords
 from nltk.stem.snowball import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
 
 
@@ -114,8 +113,8 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
     n_w_list = []
 
     for cluster_dict in clusters_dict_list:
-        logging.info("-" * 50)
-        logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
+        #logging.info("-" * 50)
+        #logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
         topics_list = cluster_dict["topics"]
 
         h_w = 0.0
@@ -123,7 +122,6 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
         # Get total of docs in cluster
         n_w = np.sum([topic_dict["num_docs"] for topic_dict in topics_list])
 
-        # TODO: Check the number of documents and compare to the "cluster" number
         n_docs += n_w
 
         num_topics = len(topics_list)
@@ -132,9 +130,10 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
             topic_diff = cluster_dict["num_docs"] - len(topics_list[0])
             n_w += topic_diff
 
-            # TODO: add the missing count as an adittional topic
             p_wc = (1.0 * topic_diff) / n_w
             h_w += -1.0 * p_wc * math.log2(p_wc)
+
+        # if num_topics = 0... entropy is zero... and we do not need to sum....
 
         for topic_dict in topics_list:
             if n_w > 0:
@@ -146,11 +145,11 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
         h_w_list.append(h_w)
         n_w_list.append(n_w)
 
-        logging.info(round(h_w, 4))
+        #logging.info(round(h_w, 4))
 
     h_big_omega = 0
-    logging.info("Nw " + str(n_w_list))
-    logging.info("hw " + str(h_w_list))
+    #logging.info("Nw " + str(n_w_list))
+    #logging.info("hw " + str(h_w_list))
     n_docs = np.sum(n_w_list)
 
     for i in range(len(h_w_list)):
@@ -162,7 +161,75 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
 
 
 def calculate_impurity(clustering_alg, clusters_docs_dict):
-    pass
+    """
+     Calculate Purity from JSON files with expert notes
+
+     Ref:
+     :param clustering_alg: Clustering Algorithm
+     :param clusters_docs_dict: Dict from JSON with all results
+     :return: Entropy Values
+     """
+
+    logging.info("#" * 50)
+    logging.info("Alg " + clustering_alg)
+
+    clusters_dict_list = clusters_docs_dict[clustering_alg]
+    list_docs = []
+
+    n_docs = 0
+
+    purity_list = []
+    n_w_list = []
+
+    for cluster_dict in clusters_dict_list:
+        #logging.info("-" * 50)
+        #logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
+        topics_list = cluster_dict["topics"]
+
+        purity_cw = 0.0
+
+        # Get total of docs in cluster
+        n_cluster = np.sum([topic_dict["num_docs"] for topic_dict in topics_list])
+
+        n_docs += n_cluster
+
+        num_topics = len(topics_list)
+
+        # If there is no topics indicated... All docs from cluster belongs the to same topic.
+        if num_topics == 0:
+            purity_cw = 1
+
+        # One there's only one topic, it is the "different" topic.
+        # So we need to count the "normal" topic.
+        elif num_topics == 1 and cluster_dict["num_docs"] > len(topics_list[0]):
+            n_different = len(topics_list[0])
+            n_normal = cluster_dict["num_docs"] - len(topics_list[0])
+
+            n_docs += n_normal
+            n_cluster += n_normal
+
+            purity_cw = max(n_different, n_normal) / cluster_dict["num_docs"]
+        else:
+            num_docs_per_topic = [topic_dict["num_docs"] for topic_dict in topics_list]
+
+            max_num = max(num_docs_per_topic)
+            purity_cw = max_num / np.sum(num_docs_per_topic)
+
+        # Get the max value from topics.
+        purity_list.append(purity_cw)
+        n_w_list.append(n_cluster)
+
+        # logging.info(round(h_w, 4))
+
+    purity = 0
+    for i_cluster in range(len(purity_list)):
+        n_i = n_w_list[i_cluster]
+
+        purity += (1.0 * purity_list[i_cluster] * n_i) / n_docs
+
+    logging.info("Purity = " + str(round(purity, 4)))
+
+    return 0
 
 
 def save_bow_to_csv(data, vocab):
@@ -191,12 +258,15 @@ def calculate_cluster_tendency():
     logging.info("Cluster Tendency")
 
     logging.info("Reading CSV")
-    bow_df = pd.read_csv("data/bow_model.csv", index_col=0)
+    bow_default_df = pd.read_csv("data/bow_model.csv", index_col=0)
+    x = []
 
-    hopkins_value = round(hopkins(bow_df.to_dense()), 4)
-    logging.info("Hopkins test: " + str(hopkins_value))
+    for i in range(10):
+        bow_df = bow_default_df.copy()
+        hopkins_value = round(hopkins(bow_df), 4)
+        logging.info("Hopkins test: " + str(hopkins_value))
 
-    return hopkins_value
+    return 0
 
 
 def hopkins(data_array):
@@ -308,7 +378,8 @@ def process_notes_from_expert():
 
     clustering_algs = [
         "K-means",
-        "Hierárquica"
+        "Hierárquica",
+        "Affinity"
     ]
 
     alg_dicts = dict()
@@ -398,7 +469,7 @@ def process_notes_from_expert():
                     topic_data["num_docs"] = num_docs_topic
                     cluster_data["topics"].append(topic_data)
 
-                    if ind_alg == 1:  # Hierarchical
+                    if ind_alg >= 1:  # Hierarchical
                         topic_data = dict()
                         topic_data["topico"] = "Padrão"
                         topic_data["docs"] = []
