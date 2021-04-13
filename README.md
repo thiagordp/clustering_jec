@@ -6,7 +6,7 @@ Repository with the code used in the paper published in Artificial Intelligence 
 
 To install dependencies from this project, run:
 
-    python -r requirements.txt
+    pip install -r requirements.txt
 
 ## Project Structure
 
