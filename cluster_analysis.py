@@ -1,24 +1,24 @@
 """
+Code for Clusters Analysis
 
+@authors Sabo et. al
 """
+
 import glob
 import json
+import logging
 import os
-import sys
-import time
+
+import nltk
 import numpy as np
 import pandas as pd
 import tqdm
-import logging
-import nltk
-from sklearn.metrics.pairwise import cosine_similarity
 
 from affinity_propagation_clustering import affinity_clustering
 from evaluate_clusters import load_process_files, save_bow_to_csv, calculate_cluster_tendency, calculate_entropy, calculate_impurity, \
     process_notes_from_expert
 
 DATASET_PATH = "/media/trdp/Arquivos/Studies/Msc/Thesis/Experiments/Datasets/jec_base_665/TXTs/"
-# DATASET_PATH = "/media/trdp/Arquivos/Studies/Msc/Thesis/Experiments/Datasets/processos_transp_aereo/txts_atualizados_sd_manual/novos/"
 REPLACE_CHARS = "°-.:/,;()[]{}º\xa0§“”'‘’ª&$#\"@!?+-~£\x81<>"
 
 
@@ -118,14 +118,13 @@ def quantitave_analysis_dataset():
 
 def evaluate_cluster_results():
     # # Load BOW
-    # data, vocab = load_process_files()
-    #
-    # # Save BOW to CSV to improve processing time.
-    # save_bow_to_csv(data, vocab)
-    #
-    # # Calculate Clustering tendency
-    #h = calculate_cluster_tendency()
-    #logging.info("Hopkins" + str(h))
+    data, vocab = load_process_files()
+    # Save BOW to CSV to improve processing time.
+    save_bow_to_csv(data, vocab)
+
+    # Calculate Clustering tendency
+    h = calculate_cluster_tendency()
+    logging.info("Hopkins" + str(h))
 
     clusters_docs_dict = process_notes_from_expert()
 
@@ -149,23 +148,22 @@ def main():
                         datefmt='%d-%b-%y %H:%M:%S',
                         level=logging.INFO)
 
-    # # Download NLTK's list of stopwords
-    # nltk.download('stopwords')
-    #
-    # # Process PKL outputs (Docs and assigned clusters) from Orange 3.
-    # interpret_groups_pkl("data/clustering_hierarchical.txt", "data/hierarchical/")
-    # interpret_groups_pkl("data/clustering_kmeans.txt", "data/k_means/")
-    #
-    # # Get the quantitative information about the documents
-    # quantitave_analysis_dataset()
-    # calculate_sequences()
+    # Download NLTK's list of stopwords
+    nltk.download('stopwords')
+
+    # Process PKL outputs (Docs and assigned clusters) from Orange 3.
+    interpret_groups_pkl("data/clustering_hierarchical.txt", "data/hierarchical/")
+    interpret_groups_pkl("data/clustering_kmeans.txt", "data/k_means/")
+
+    # Get the quantitative information about the documents
+    quantitave_analysis_dataset()
+    calculate_sequences()
 
     evaluate_cluster_results()
 
-
     # Affinity Clustering
-    #_, docs, _, bow_docs, vocab = load_process_files()
-    #affinity_clustering(docs, bow_docs, vocab)
+    _, docs, _, bow_docs, vocab = load_process_files()
+    affinity_clustering(docs, bow_docs, vocab)
 
 
 if __name__ == "__main__":

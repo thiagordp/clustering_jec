@@ -113,8 +113,8 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
     n_w_list = []
 
     for cluster_dict in clusters_dict_list:
-        #logging.info("-" * 50)
-        #logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
+        # logging.info("-" * 50)
+        # logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
         topics_list = cluster_dict["topics"]
 
         h_w = 0.0
@@ -145,11 +145,11 @@ def calculate_entropy(clustering_alg, clusters_docs_dict):
         h_w_list.append(h_w)
         n_w_list.append(n_w)
 
-        #logging.info(round(h_w, 4))
+        # logging.info(round(h_w, 4))
 
     h_big_omega = 0
-    #logging.info("Nw " + str(n_w_list))
-    #logging.info("hw " + str(h_w_list))
+    # logging.info("Nw " + str(n_w_list))
+    # logging.info("hw " + str(h_w_list))
     n_docs = np.sum(n_w_list)
 
     for i in range(len(h_w_list)):
@@ -182,8 +182,8 @@ def calculate_impurity(clustering_alg, clusters_docs_dict):
     n_w_list = []
 
     for cluster_dict in clusters_dict_list:
-        #logging.info("-" * 50)
-        #logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
+        # logging.info("-" * 50)
+        # logging.info("Cluster: " + cluster_dict["id"] + ": " + str(cluster_dict["num_docs"]))
         topics_list = cluster_dict["topics"]
 
         purity_cw = 0.0
